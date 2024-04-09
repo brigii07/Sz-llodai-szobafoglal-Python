@@ -19,7 +19,7 @@ class Szobak(ABC):
 #amit alapbol adtam neki
 class EgyagyasSzoba(Szobak):
     def __init__(self, szobaszam):
-        super().__init__(ar=100, szobaszam=szobaszam)
+        super().__init__(ar=10000, szobaszam=szobaszam)
     
     def get_ar(self):
         return self.ar
@@ -29,7 +29,7 @@ class EgyagyasSzoba(Szobak):
 #amit adtam neki
 class KetagyasSzoba(Szobak):
     def __init__(self, szobaszam):
-        super().__init__(ar=150, szobaszam=szobaszam)
+        super().__init__(ar=15000, szobaszam=szobaszam)
     
     def get_ar(self):
         return self.ar
@@ -111,7 +111,7 @@ def main():
             if foglalas_datum >= datetime.now():
                 foglalas = szalloda.foglalas(szobaszam, datum)
                 if foglalas:
-                    print(f"Sikeres foglalás a szobára {szobaszam} a {datum} dátumra, a fizetendő összeg pedig: ")
+                    print(f"Sikeres foglalás a szobára {szobaszam} a {datum} dátumra, a fizetendő összeg pedig:  ")
                 else:
                     print("Hiba: A megadott szoba nem található vagy foglalt.")
             else:
