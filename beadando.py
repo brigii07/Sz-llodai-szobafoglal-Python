@@ -102,16 +102,20 @@ def main():
         print("3. Foglalások listázása")
         print("0. Kilépés")
         choice = input("Válasszon egy műveletet: ")
-
+        
     #ha az 1-est választja, akkor a foglalás fog lefutni
         if choice == "1":
             szobaszam = input("Adja meg a szoba számát: ")
             datum = input("Adja meg a foglalás dátumát (ÉÉÉÉ-HH-NN): ")
             foglalas_datum = datetime.strptime(datum, "%Y-%m-%d")
+            
             if foglalas_datum >= datetime.now():
                 foglalas = szalloda.foglalas(szobaszam, datum)
                 if foglalas:
-                    print(f"Sikeres foglalás a szobára {szobaszam} a {datum} dátumra, a fizetendő összeg pedig:  ")
+                    if szobaszam == "101" or szobaszam == "102" or szobaszam == "103":
+                        print(f"Sikeres foglalás a szobára {szobaszam} a {datum} dátumra, a fizetendő összeg pedig: 10.000Ft")
+                    elif szobaszam == "201" or szobaszam == "202" or szobaszam == "203":
+                        print(f"Sikeres foglalás a szobára {szobaszam} a {datum} dátumra, a fizetendő összeg pedig: 15.000Ft")
                 else:
                     print("Hiba: A megadott szoba nem található vagy foglalt.")
             else:
