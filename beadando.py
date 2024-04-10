@@ -97,7 +97,8 @@ def main():
 
     while True:
         #ezek a lehetosegek a user interface szempontjabol
-        print("\n1. Foglalás")
+        print("\nÜdvözlöm a Bridge hotelben!")
+        print("1. Foglalás")
         print("2. Lemondás")
         print("3. Foglalások listázása")
         print("0. Kilépés")
